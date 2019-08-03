@@ -19,7 +19,9 @@ from lineas import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'lineas', views.LineaView, base_name="Linea")
+router.register(r'linea', views.LineaView, base_name="linea")
+router.register(r'estacion', views.EstacionView, base_name="estacion")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
