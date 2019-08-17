@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from lineas import views
 from rest_framework import routers
+from rest_framework_simplejwt import views as jwt_views
 
 router = routers.DefaultRouter()
 router.register(r'linea', views.LineaView, base_name="linea")
@@ -25,5 +26,6 @@ router.register(r'estacion', views.EstacionView, base_name="estacion")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
-]
+    path('api/', include(router.urls)),
+    path('', include('frontend.urls'))
+    ]
